@@ -16,9 +16,9 @@
     IconMoon,
     IconSun,
   } from '@/components';
-  
+
   const enabled = ref(false);
-  
+
   const updateTheme = (isDarkMode) => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
@@ -26,23 +26,23 @@
       document.documentElement.classList.remove('dark');
     }
   };
-  
+
   const toggleTheme = () => {
     enabled.value = !enabled.value;
     updateTheme(enabled.value);
   };
-  
+
   onMounted(() => {
     enabled.value = window.matchMedia('(prefers-color-scheme: dark)').matches;
     updateTheme(enabled.value)
   });
-  
+
   const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
   systemPrefersDark.addEventListener('change', (e) => {
     enabled.value = e.matches;
     updateTheme(e.matches);
   });
-  
+
   onUnmounted(() => {
     systemPrefersDark.removeEventListener('change', handleSystemThemeChange);
   });

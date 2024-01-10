@@ -1,14 +1,14 @@
 <template>
   <div class="flex justify-between items-center p-4 navbar-background">
     <SpinningLogo />
-	  <div class="flex items-center justify-center space-x-4">
+    <div class="flex items-center justify-center space-x-4">
       <a
-        href="https://github.com/bacv"
-        class="noop-link max-h-24"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <ThemeSvg><img :src="githubSrc" class="max-h-5"/></ThemeSvg>
+          href="https://github.com/bacv"
+          class="noop-link max-h-24"
+          target="_blank"
+          rel="noopener noreferrer"
+          >
+          <ThemeImg><img :src="githubSrc" class="max-h-5"/></ThemeImg>
       </a>
       <ThemeSwitch />
 
@@ -17,11 +17,11 @@
       </button>
 
       <TransitionRoot appear :show="isOpen" as="template">
-        <NavDialog @close-dialog="closeModal">
-          <template v-slot>
-            <MenuContent />
-          </template>
-        </NavDialog>
+      <NavDialog @close-dialog="closeModal">
+      <template v-slot>
+        <MenuContent />
+      </template>
+      </NavDialog>
       </TransitionRoot>
     </div>
   </div>
@@ -38,7 +38,7 @@
     DialogTitle,
   } from '@headlessui/vue'
   import {
-    ThemeSvg,
+    ThemeImg,
     MenuBtn,
     SpinningLogo,
     Dialog as NavDialog,
@@ -50,7 +50,7 @@
   const isOpen = ref(false)
   const menuHovered = ref(false);
   const menuOpened = ref(false);
-  
+
   function closeModal() {
     isOpen.value = false
   }
@@ -60,9 +60,9 @@
 </script>
 
 <style scoped>
-  .noop-link {
-    background-color: none;
-  }
+.noop-link {
+  background-color: none;
+}
   .noop-link:hover {
     background-color: transparent;
   }

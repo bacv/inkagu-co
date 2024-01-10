@@ -1,11 +1,11 @@
 <template>
   <div class="greetings flex flex-col items-center justify-center lg:items-start lg:justify-start">
-	  <div class="flex items-center justify-center lg:justify-start">
-      <ThemeSvg>
+    <div class="flex items-center justify-center lg:justify-start">
+      <ThemeImg>
         <img :src="logoTxtSrc" class="h-12">
-      </ThemeSvg>
+      </ThemeImg>
       <img :src="logoSrc" class="h-12 ps-5">
-	  </div>
+    </div>
 
     <h3 class="pt-3">
       {{ msg }}
@@ -14,10 +14,10 @@
 </template>
 
 <script setup>
-  import { ThemeSvg } from '@/components/ui';
+  import { ThemeImg } from '@/components/ui';
   import logoSrc from '@/assets/logo-color.svg';
   import logoTxtSrc from '@/assets/logo-txt.svg';
-  
+
   defineProps({
     msg: {
       type: String,
@@ -33,16 +33,16 @@
     position: relative;
     top: -10px;
   }
-  
+
   h3 {
     font-size: 1.2rem;
   }
-  
+
   .greetings h1,
   .greetings h3 {
     text-align: center;
   }
-  
+
   @media (min-width: 1024px) {
     .greetings h1,
     .greetings h3 {
