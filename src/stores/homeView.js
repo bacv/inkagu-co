@@ -6,7 +6,7 @@ export const useHomeViewStore = defineStore('homeView', {
   }),
   actions: {
     async fetchData() {
-      const title = 'Turning ideas into awesome products, one LOC at a time';
+      const title = 'Turning ideas into awesome products, 1LOC at a time';
 
       // const response = await fetch('your-api-endpoint');
       // this.projects = await response.json();
