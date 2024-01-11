@@ -19,7 +19,7 @@
       <TransitionRoot appear :show="isOpen" as="template">
       <NavDialog @close-dialog="closeModal">
       <template v-slot>
-        <MenuContent />
+        <MenuContent @close="closeModal" />
       </template>
       </NavDialog>
       </TransitionRoot>
@@ -60,9 +60,9 @@
 </script>
 
 <style scoped>
-.noop-link {
-  background-color: none;
-}
+  .noop-link {
+    background-color: none;
+  }
   .noop-link:hover {
     background-color: transparent;
   }

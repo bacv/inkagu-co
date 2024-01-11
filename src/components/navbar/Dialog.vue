@@ -19,8 +19,8 @@
                     >
                     <CloseBtn />
                 </button>
-                  <!-- Content Slot -->
-                  <slot></slot>
+                <!-- Content Slot -->
+                <slot></slot>
               </div>
             </div>
           </DialogPanel>
@@ -37,7 +37,8 @@
     Dialog,
     DialogPanel,
   } from '@headlessui/vue';
-  import CloseBtn from '@/components/ui/CloseBtn.vue';
+  import { CloseBtn } from '@/components';
+
   import logoSrc from '@/assets/logo.svg';
   import logoTxtSrc from '@/assets/logo-txt.svg';
 
