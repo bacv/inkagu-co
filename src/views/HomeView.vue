@@ -1,12 +1,12 @@
 <template>
   <div class="home split-view lg:grid lg:grid-cols-2">
-    <header class="lg:col-span-1 lg:h-auto flex flex-col justify-center items-center header-height">
+    <header class="lg:col-span-1 lg:h-auto flex flex-col justify-center items-center">
       <div class="wrapper">
         <HelloWorld :msg="homeViewStore.title" />
       </div>
     </header>
     <main class="lg:col-span-1">
-      <img src="@/assets/graphics/c1.png">
+      <img class="weird-img" src="@/assets/graphics/c1.png">
     </main>
   </div>
 </template>
@@ -27,11 +27,13 @@
 <style scoped>
   header {
     line-height: 1.5;
-    max-height: 100vh;
+    height: 66vh;
   }
 
-  .header-height {
-    height: 66vh;
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @media (min-width: 1024px) {
@@ -39,6 +41,7 @@
       display: flex;
       place-items: center;
       padding-right: calc(var(--section-gap) / 2);
+      height: auto;
     }
 
     header .wrapper {
@@ -50,10 +53,6 @@
     .split-view {
       display: grid;
       grid-template-columns: 1fr 1fr;
-    }
-
-    .header-height {
-      height: auto;
     }
   }
 </style>

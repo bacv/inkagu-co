@@ -1,6 +1,8 @@
 <template>
   <div class="p-4">
-    <h1 class="text-center text-2xl font-bold mb-6">Projects</h1>
+    <header>
+      <img class="weird-img" src="@/assets/graphics/c2.png">
+    </header>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       <ProjectCard v-for="project in projectsStore.projects" :key="project.url" :project="project" />
     </div>
@@ -19,4 +21,20 @@
   });
 </script>
 
+<style scoped>
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 66vh;
+  }
 
+  @media (min-width: 1024px) {
+    header {
+      display: flex;
+      place-items: center;
+      padding-right: calc(var(--section-gap) / 2);
+      height: auto;
+    }
+  }
+</style>

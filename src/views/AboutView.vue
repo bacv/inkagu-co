@@ -1,13 +1,26 @@
 <template>
-  <div class="about">
-    <h1>Github content</h1>
+  <div class="about-view">
+    <header class="flex flex-col justify-center items-center">
+      <div class="wrapper">
+        About
+      </div>
+    </header>
+    <main class="lg:col-span-1">
+      <img class="weird-img" src="@/assets/graphics/c3.png">
+    </main>
   </div>
 </template>
 
-<style>
-  .about {
-    min-height: 100vh;
+<style scoped>
+  header {
+    line-height: 1.5;
+    height: 66vh;
+  }
+
+  main {
     display: flex;
+    justify-content: center;
     align-items: center;
   }
+
 </style>
