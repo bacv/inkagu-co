@@ -23,7 +23,6 @@ var p = {
   screens: [''],
   desc: 'More ......',
   tags: ['ci', 'devops', 'mastodon'],
-  featureProject: false,
 }
 
 var f = {
@@ -35,5 +34,5 @@ var f = {
   screens: [''],
   desc: 'More ......',
   tags: ['ci', 'devops', 'mastodon'],
-  featureProject: true,
+  featured: true,
 }
