@@ -9,6 +9,9 @@
       <img class="weird-img" src="@/assets/graphics/c1.png">
     </main>
   </div>
+  <main class="lg:col-span-1">
+    <img class="weird-img" src="@/assets/graphics/c1.png">
+  </main>
 </template>
 
 <script setup>
@@ -53,6 +56,7 @@
     .split-view {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      height: 100vh;
     }
   }
 </style>
