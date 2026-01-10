@@ -1,0 +1,51 @@
+@font-face {
+  font-family: Quicksand;
+  font-weight: bold;
+  src: url(quicksand-bold.ttf);
+}
+
+html {
+  font-family: "Quicksand", Arial, sans-serif;
+  background-color: #789;
+  font-size: 20px;
+}
+
+@media (min-width: 48em) {
+  html {
+  }
+}
+
+.content {
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 48em) {
+  .content {
+    max-width: 48em;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/************************** Navi *************************/
+
+#navi {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 48em;
+    padding: 0.5em;
+    border-radius: 5px;
+    background-color: #eef;
+    display: grid;
+}
+
+#navi-main {
+    font-size: 32px;
+}
+
+#navi-path {
+    padding-top: 0.5em;
+    font-size: 16px;
+}

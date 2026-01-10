@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="posts">
+        {% for page in section.pages | reverse %}
+          <div class="post">
+            <h1 class="post-title">
+              <a href="{{ page.permalink | safe }}">
+                {{ page.title | safe }}
+              </a>
+            </h1>
+
+            <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+          </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
