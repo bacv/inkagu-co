@@ -1,6 +1,18 @@
 <div id="navi">
     <div id="navi-main">
-        <a href="{{ config.base_url }}">inkagu.co</a>
+        <div id="navi-loco">
+            <a href="/"><img src="/loco-rect2.svg" /></a>
+        </div>
+        <div id="navi-hi">
+            <img src="/loco-hi.svg" />
+        </div>
+        <div id="navi-first-row">
+            <ul>
+                <li><a href="/logs">Logs</a></li>
+                <li><a href="/bookmarks">Bookmarks</a></li>
+                <li><a href="/info">Info</a></li>
+            </ul>
+        </div>
     </div>
         {% if page.ancestors %}
         <div id="navi-path">
