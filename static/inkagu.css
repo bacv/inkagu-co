@@ -2,25 +2,37 @@
     font-family: TitlesFont;
     font-weight: bold;
     src: url(quicksand.woff2);
+    font-display: swap;
 }
 
 @font-face {
     font-family: TextsFont;
-    font-weight: normal;
+    font-weight: 400;
     src: url(kameron.woff2);
+    font-display: swap;
 }
 
 html {
     font-family: "TextsFont", Arial, sans-serif;
-    font-weight: 900;
-    background-color: #789;
+    background-color: #101;
     font-size: 24px;
     color: white;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* Overwrite img fix from the inline css in the base html. */
 img {
     max-width: 1000px;
+}
+
+::selection {
+    background-color: rgba(255, 87, 51, 0.3);
+    color: #ffffff;
 }
 
 /************************** Links *************************/
@@ -171,10 +183,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .post-date {
+    margin-bottom: 0;
     font-family: "TitlesFont", Arial, sans-serif;
 }
 
 .post-title {
+    margin-top: 0;
     color: #fff8ad;
 }
 
@@ -205,8 +219,10 @@ h1, h2, h3, h4, h5 {
 }
 
 [class^="language-"] {
+    display: block;
     padding: 20px;
     border-radius: 1em;
+    overflow-x: auto;
 }
 
 p > code {

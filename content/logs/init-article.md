@@ -8,6 +8,7 @@ This page acts as a template inspection tool. The whole site is generated with t
 This site is selfhosting the fonts. To reduce the transmitted data, fonts were chopped up using this command:
 
 ```bash
+# Requires `brotli` module.
 pyftsubset kameron.ttf \
   --output-file=kameron.woff2 \
   --flavor=woff2 \
