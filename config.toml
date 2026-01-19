@@ -19,8 +19,11 @@ taxonomies = [
 # index_format = "elasticlunr_json"
 
 [markdown]
-highlight_code = true
 external_links_target_blank = true
+
+[markdown.highlighting]
+light_theme = "rose-pine-dawn"
+dark_theme = "rose-pine-moon"
 
 [extra]
 inkagu_links = [

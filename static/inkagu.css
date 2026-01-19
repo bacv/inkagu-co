@@ -12,11 +12,39 @@
     font-display: swap;
 }
 
+:root {
+    --bg-color: #101;
+    --text-color: #fff;
+    --selection-color: rgba(255, 87, 51, 0.3);
+    --title-accent-color: #fff8ad;
+    --code-bg-color: #2b303b;
+    --blockquote-bg-color: rgba(200,200,255,.3);
+    --link-border-color: #fff;
+    --link-hover-bg-color: rgba(255, 248, 173,.3);
+    --bookmark-hover-bg-color: rgba(200,200,255,.3);
+    --blockquote-border-left-color: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #feffef;
+        --text-color: 111;
+        --selection-color: rgba(255, 87, 51, 0.3);
+        --title-accent-color: #087baa;
+        --code-bg-color: #d7827e;
+        --blockquote-bg-color: #faf4ed;
+        --link-border-color: #d7827e;
+        --link-hover-bg-color: rgba(235, 248, 255,.5);
+        --bookmark-hover-bg-color: #d7827e55;
+        --blockquote-border-left-color: #ea9d34;
+    }
+}
+
 html {
     font-family: "TextsFont", Arial, sans-serif;
-    background-color: #101;
+    background-color: var(--bg-color);
     font-size: 24px;
-    color: white;
+    color: var(--text-color);
 }
 
 body {
@@ -31,15 +59,15 @@ img {
 }
 
 ::selection {
-    background-color: rgba(255, 87, 51, 0.3);
-    color: #ffffff;
+    background-color: var(--selection-color);
+    color: var(--text-color);
 }
 
 /************************** Links *************************/
 
 a {
     font-family: "TitlesFont", Arial, sans-serif;
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -164,7 +192,7 @@ a {
 
 .content > .posts > .post {
     border-radius: 5px;
-    border: 1px solid white;
+    border: 1px solid var(--link-border-color);
 }
 
 h1, h2, h3, h4, h5 {
@@ -176,7 +204,7 @@ h1, h2, h3, h4, h5 {
 .post > h1, .post > h2,
 .post > h3, .post > h4, .post > h5 {
     font-family: "TitlesFont", Arial, sans-serif;
-    color: #fff8ad;
+    color: var(--title-accent-color);
 }
 
 /* First level of points has no * infront. */
@@ -194,30 +222,30 @@ h1, h2, h3, h4, h5 {
 .post-date {
     margin-bottom: 0;
     font-family: "TitlesFont", Arial, sans-serif;
-    color: white !important;
+    color: var(--text-color) !important;
 }
 
 .post-title {
     margin-top: 0;
-    color: #fff8ad;
+    color: var(--title-accent-color);
 }
 
 .title-link, 
 .log-links a {
-    border: white;
+    border: var(--link-border-color);
 }
 
 .title-link:hover,
 .log-links h1:hover {
-    background-color: rgba(255, 248, 173,.3);
+    background-color: var(--link-hover-bg-color);
 }
 
 .bookmarks a,
 .post a {
     font-family: "TitlesFont", Arial, sans-serif;
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
-    border: 1px solid white;
+    border: 1px solid var(--link-border-color);
     border-radius: 0.4em;
     padding: 0 0.3em;
     font-size: 0.8em;
@@ -225,10 +253,10 @@ h1, h2, h3, h4, h5 {
 
 .bookmarks a:hover,
 .post a:hover {
-    background-color: rgba(200,200,255,.3);
+    background-color: var(--bookmark-hover-bg-color);
 }
 
-[class^="language-"] {
+.giallo {
     display: block;
     font-size: 0.9em;
     padding: 20px;
@@ -240,12 +268,12 @@ p > code {
     border-radius: 0.4em;
     padding: 0 0.3em;
     font-size: 0.8em;
-    background-color: #2b303b;
+    background-color: var(--code-bg-color);
 }
 
 blockquote {
     margin: 0;
     padding-left: 1.5em;
-    border-left: 0.3em solid #fff;
-    background-color: rgba(200,200,255,.3);
+    border-left: 0.3em solid var(--blockquote-border-left-color);
+    background-color: var(--blockquote-bg-color);
 }
