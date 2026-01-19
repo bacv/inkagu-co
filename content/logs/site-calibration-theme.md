@@ -18,6 +18,8 @@ pyftsubset kameron.ttf \
 
 There are still some inconsistencies in styling, mainly in how log entry titles appear on different pages. Also, there are too few weird SVG illustrations.
 
+<!-- more -->
+
 # Title \<h1\>
 With some text.
 
