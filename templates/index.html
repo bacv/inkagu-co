@@ -4,18 +4,17 @@
 <h1 class="title">
   This is my blog made with Zola.
 </h1>
-<div>
+<div id="homepage-posts">
     {% set section = get_section(path="logs/_index.md") %}
-    <ul>
-    {% for page in section.pages %}
-      <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-    {% endfor %}
-    </ul>
-    <div>
-        <a href="/logs">All logs</a>
-    </div>
-    <div>
-        <a href="/bookmarks">Bookmarks</a>
+    <div class="log-links">
+        {% for page in section.pages %}
+            <a class="title-link" href="{{ page.permalink | safe }}">
+  <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+              <h1 class="post-title">
+                {{ page.title | safe }}
+              </h1>
+            </a>
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}

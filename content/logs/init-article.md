@@ -1,27 +1,37 @@
 +++
-title = "What is Zola"
+title = "Calibration post"
 date = 2026-01-10
 +++
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu feugiat sapien. Aenean ligula nunc, laoreet id sem in, interdum bibendum felis. Donec vel dui neque. Praesent ac sem ut justo volutpat rutrum a imperdiet tellus. Nam lobortis massa non hendrerit hendrerit. Vivamus porttitor dignissim turpis, eget aliquam urna tincidunt non. Aliquam et fringilla turpis. Nullam eros est, eleifend in ornare sed, hendrerit eget est. Aliquam tellus felis, suscipit vitae ex vel, fringilla tempus massa. Nulla facilisi. Pellentesque lobortis consequat lectus. Maecenas ac libero elit.
+This page acts as a template inspection tool. The whole site is generated with the [zola](https://getzola.org) static site generator. Site is designed to be usable without css and javascript. 
 
-```rust
-// this is code example
-fn test(){
-  let lol = String::new("test");
-}
+This site is selfhosting the fonts. To reduce the transmitted data, fonts were chopped up using this command:
+
+```bash
+pyftsubset kameron.ttf \
+  --output-file=kameron.woff2 \
+  --flavor=woff2 \
+  --layout-features='' \
+  --unicodes="U+0020-007E"
 ```
-# Title
-text
 
-## 2 title
-txt
+There are still some inconsistencies in styling, mainly in how log entry titles appear on different pages. Also, there are too few weird SVG illustrations.
 
-### Some title
-ttttx
-- list
+# Title \<h1\>
+With some text.
+
+## Title \<h2\>
+And with some more text.
+
+### Title \<h3\>
+Some text with list:
+- root
+  - leaf
 - lets go
 - i hope it looks good
 
-> this is citation `lol`.
+> This is citation `with some code`.
+> And it doesn't continue on another line.
 
+#### Title \<h4\>
+Looks like most important elements are covered.

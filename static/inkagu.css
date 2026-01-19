@@ -1,41 +1,27 @@
 @font-face {
-  font-family: TitlesFont;
-  font-weight: bold;
-  src: url(quicksand-bold.ttf);
+    font-family: TitlesFont;
+    font-weight: bold;
+    src: url(quicksand.woff2);
 }
 
 @font-face {
-  font-family: TextsFont;
-  font-weight: normal;
-  src: url(BarlowSemiCondensed-ExtraLight.ttf);
+    font-family: TextsFont;
+    font-weight: normal;
+    src: url(kameron.woff2);
 }
 
 html {
-  font-family: "TextsFont", Arial, sans-serif;
-  font-weight: 900;
-  background-color: #789;
-  font-size: 20px;
-  color: white;
+    font-family: "TextsFont", Arial, sans-serif;
+    font-weight: 900;
+    background-color: #789;
+    font-size: 24px;
+    color: white;
 }
 
-@media (min-width: 48em) {
-  html {
-  }
+/* Overwrite img fix from the inline css in the base html. */
+img {
+    max-width: 1000px;
 }
-
-.content {
-  padding-bottom: 4rem;
-}
-
-@media (min-width: 48em) {
-  .content {
-    max-width: 48em;
-    margin-top: 4rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 
 /************************** Links *************************/
 
@@ -142,27 +128,97 @@ a {
 
 /************************** Content *************************/
 
-.content a {
-    font-family: "TitlesFont", Arial, sans-serif;
-    color: white;
-    text-decoration: none;
-    border: 1px solid white;
-    border-radius: 0.4em;
-    padding: 0 0.3em;
+.content {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
 }
 
-.content a:hover {
-    background-color: rgba(200,200,255,.3);
+@media (min-width: 48em) {
+    .content {
+        max-width: 48em;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .content a[target="_blank"]::after {
-  content: "╯";
-  margin-left: 0.25em;
-  font-size: 0.8em;
+    content: "╯";
+    margin-left: 0.25em;
+    font-size: 0.8em;
+}
+
+.content > .posts > .post {
+    border-radius: 5px;
+    border: 1px solid white;
 }
 
 /************************** Posts *************************/
 
 h1, h2, h3, h4, h5 {
     font-family: "TitlesFont", Arial, sans-serif;
+}
+
+/* First level of points has no * infront. */
+#homepage-posts > ul,
+.bookmarks > ul {
+    padding: 0;
+    margin: 0;
+}
+
+#homepage-posts > ul > li,
+.bookmarks > ul > li {
+    list-style-type: none;
+}
+
+.post-date {
+    font-family: "TitlesFont", Arial, sans-serif;
+}
+
+.post-title {
+    color: #fff8ad;
+}
+
+.title-link, 
+.log-links a {
+    border: white;
+}
+
+.title-link:hover,
+.log-links h1:hover {
+    background-color: rgba(255, 248, 173,.3);
+}
+
+.bookmarks a,
+.post a {
+    font-family: "TitlesFont", Arial, sans-serif;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 0.4em;
+    padding: 0 0.3em;
+    font-size: 0.8em;
+}
+
+.bookmarks a:hover,
+.post a:hover {
+    background-color: rgba(200,200,255,.3);
+}
+
+[class^="language-"] {
+    padding: 20px;
+    border-radius: 1em;
+}
+
+p > code {
+    border-radius: 0.4em;
+    padding: 0 0.3em;
+    font-size: 0.8em;
+    background-color: #2b303b;
+}
+
+blockquote {
+    margin: 0;
+    padding-left: 1.5em;
+    border-left: 0.3em solid #fff;
+    background-color: rgba(200,200,255,.3);
 }
