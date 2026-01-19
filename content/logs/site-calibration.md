@@ -1,5 +1,5 @@
 +++
-title = "Calibration post"
+title = "Site calibration"
 date = 2026-01-10
 +++
 
@@ -21,12 +21,14 @@ There are still some inconsistencies in styling, mainly in how log entry titles 
 # Title \<h1\>
 With some text.
 
-## Title \<h2\>
+## Title \<h2\>, and sometimes titles get pretty long because narrator forgets the topic and allows the stream of conciousness to take over
 And with some more text.
 
 ### Title \<h3\>
 Some text with list:
 - root
+  - child
+    - leaf
   - leaf
 - lets go
 - i hope it looks good

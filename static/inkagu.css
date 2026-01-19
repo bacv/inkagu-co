@@ -87,12 +87,15 @@ a {
     postion-anchor: --loco-anchor;
     transform: translate(-0.3em, -1.5em);
     animation-duration: 2s;
-    animation-name: fade-out;
+    animation-name: fade-in-out;
     opacity: 0;
 }
 
-@keyframes fade-out {
+@keyframes fade-in-out {
     0% {
+        opacity: 0;
+    }
+    15% {
         opacity: 1;
     }
     75% {
@@ -164,10 +167,16 @@ a {
     border: 1px solid white;
 }
 
-/************************** Posts *************************/
-
 h1, h2, h3, h4, h5 {
     font-family: "TitlesFont", Arial, sans-serif;
+}
+
+/************************** Posts *************************/
+
+.post > h1, .post > h2,
+.post > h3, .post > h4, .post > h5 {
+    font-family: "TitlesFont", Arial, sans-serif;
+    color: #fff8ad;
 }
 
 /* First level of points has no * infront. */
@@ -185,6 +194,7 @@ h1, h2, h3, h4, h5 {
 .post-date {
     margin-bottom: 0;
     font-family: "TitlesFont", Arial, sans-serif;
+    color: white !important;
 }
 
 .post-title {
@@ -220,6 +230,7 @@ h1, h2, h3, h4, h5 {
 
 [class^="language-"] {
     display: block;
+    font-size: 0.9em;
     padding: 20px;
     border-radius: 1em;
     overflow-x: auto;
