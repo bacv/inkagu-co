@@ -17,12 +17,13 @@
     --text-color: #fff;
     --selection-color: rgba(255, 87, 51, 0.3);
     --title-accent-color: #fff8ad;
-    --code-bg-color: #2b303b;
-    --blockquote-bg-color: rgba(200,200,255,.3);
+    --code-bg-color: #d7827e77;
+    --code-text-color: #fff;
+    --blockquote-bg-color: #232136;
     --link-border-color: #fff;
     --link-hover-bg-color: rgba(255, 248, 173,.3);
     --bookmark-hover-bg-color: rgba(200,200,255,.3);
-    --blockquote-border-left-color: #fff;
+    --blockquote-border-left-color: #ea9d34;
 }
 
 @media (prefers-color-scheme: light) {
@@ -32,6 +33,7 @@
         --selection-color: rgba(255, 87, 51, 0.3);
         --title-accent-color: #087baa;
         --code-bg-color: #d7827e;
+        --code-text-color: #fff;
         --blockquote-bg-color: #faf4ed;
         --link-border-color: #d7827e;
         --link-hover-bg-color: rgba(235, 248, 255,.5);
@@ -55,6 +57,7 @@ body {
 
 /* Overwrite img fix from the inline css in the base html. */
 img {
+    width: 100%;
     max-width: 1000px;
 }
 
@@ -199,6 +202,16 @@ h1, h2, h3, h4, h5 {
     font-family: "TitlesFont", Arial, sans-serif;
 }
 
+h1 {
+    font-size: 1.7em;
+}
+
+@media (min-width: 48em) {
+    h1 {
+        font-size: 2em;
+    }
+}
+
 /************************** Posts *************************/
 
 .post > h1, .post > h2,
@@ -268,6 +281,7 @@ p > code {
     border-radius: 0.4em;
     padding: 0 0.3em;
     font-size: 0.8em;
+    color: var(--code-text-color);
     background-color: var(--code-bg-color);
 }
 
@@ -276,4 +290,18 @@ blockquote {
     padding-left: 1.5em;
     border-left: 0.3em solid var(--blockquote-border-left-color);
     background-color: var(--blockquote-bg-color);
+}
+
+.giallo-l {
+    display: inline-block;
+    min-height: 1lh;
+    width: 100%;
+}
+.giallo-ln {
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0.4em;
+    min-width: 3ch;
+    text-align: right;
+    opacity: 0.8;
 }
