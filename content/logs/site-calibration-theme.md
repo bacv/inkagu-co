@@ -1,6 +1,10 @@
 +++
 title = "Site calibration: Theme"
 date = 2026-01-10
+[taxonomies]
+tags = ["code", "zoda"]
+meta = ["test"]
+ctx = ["theme", "first post"]
 +++
 
 This page acts as a template inspection tool. The whole site is generated with the [zola](https://getzola.org) static site generator. Site is designed to be usable without css and javascript. 

@@ -1,23 +1,5 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% set section = get_section(path="logs/_index.md") %}
-    <div class="timeline-logs">
-        {% for page in section.pages %}
-        <div class="timeline-log">
-           <h4 class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</h4>
-            <a href="{{ page.permalink | safe }}">
-               <h1 class="post-title">
-                   {{ page.title | safe }}
-               </h1>
-            </a>
-            <div class="post">
-              {{ page.summary | replace(from='src="', to='src="' ~ page.permalink) | safe }}
-            </div>
-            <div class="timeline-readmore">
-                <a href="{{ page.permalink }}">Read more</a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+    {% include "timeline/include.html" %}
 {% endblock content %}

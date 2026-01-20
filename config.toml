@@ -5,7 +5,9 @@ description = "Gusto's personal website"
 default_language = "en"
 
 taxonomies = [
-    {name = "tags"}
+    { name = "tags", feed = true},
+    { name = "meta", feed = true},
+    { name = "ctx", feed = true},
 ]
 
 # No need for search in the beginning.
@@ -26,8 +28,3 @@ light_theme = "rose-pine-dawn"
 dark_theme = "rose-pine-moon"
 
 [extra]
-inkagu_links = [
-    {name = "info", url = "/pages/info"},
-    {name = "projects", url = "/pages/projects"},
-    {name = "", url = "/pages/photography"},
-]

@@ -1,0 +1,15 @@
+<div class="timeline-footer">
+    <div class="timeline-readmore">
+        {% if page.summary %}
+            <a href="{{ page.permalink }}">Read more</a>
+        {% endif %}
+    </div>
+
+    <div class="tags-section">
+        {% if page.taxonomies.tags %}
+            {% for tag in page.taxonomies.tags %}
+                <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
