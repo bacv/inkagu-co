@@ -5,6 +5,11 @@ template = "bookmarks.html"
 
 For now I'm keeping the list of my bookmarks in one file. I still need to see how I feel about such approach. At some point I would like to have a tag and filtering system.
 
+### 2026-01-21
+
+- [jamesg.blog](https://jamesg.blog) - Nice personal blog by James
+  - [Great list of personal sites](https://jamesg.blog/wander)
+
 ### 2026-01-20
 
 - [michaelwhelan.com](https://www.michaelwhelan.com/) - Micheal, science fiction illustrator
