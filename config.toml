@@ -7,7 +7,7 @@ default_language = "en"
 taxonomies = [
     { name = "tags", feed = true},
     { name = "meta", feed = true},
-    { name = "ctx", feed = true},
+    { name = "threads", feed = true},
 ]
 
 # No need for search in the beginning.

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ taxonomy.name | capitalize }}: {{ term.name }}</h1>
+<ul>
+    {% for page in term.pages %}
+    <li>
+        <time datetime="{{ page.date }}">{{ page.date | date(format="%Y-%m-%d") }}</time>
+        — 
+        <a href="{{ page.permalink }}">{{ page.title }}</a>
+        <br>
+    </li>
+    {% endfor %}
+</ul>
+<p><a href="{{ get_url(path=taxonomy.name) }}">Back to all {{ taxonomy.name }}</a></p>
+<p class="info">
+    <a href="/tags">/tags</a> 
+    <a href="/meta">/meta</a> 
+    <a href="/threads">/threads</a> 
+</p>
+{% endblock content %}

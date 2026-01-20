@@ -217,8 +217,16 @@ h1 {
     }
 }
 
+.content img {
+    border-radius: 0.3rem;
+}
+
 /************************** Posts *************************/
 
+.bookmarks > h1, .bookmarks > h2,
+.bookmarks > h3, .bookmarks > h4, .bookmarks > h5,
+.info > h1, .info > h2,
+.info > h3, .info > h4, .info > h5,
 .post > h1, .post > h2,
 .post > h3, .post > h4, .post > h5 {
     font-family: "TitlesFont", Arial, sans-serif;
@@ -285,6 +293,7 @@ h1 {
 
 .bookmarks a,
 .timeline-readmore a,
+.info a,
 .post a {
     font-family: "TitlesFont", Arial, sans-serif;
     color: var(--text-color);
@@ -297,6 +306,7 @@ h1 {
 
 .bookmarks a:hover,
 .timeline-readmore a:hover,
+.info a:hover,
 .post a:hover {
     background-color: var(--bookmark-hover-bg-color);
 }

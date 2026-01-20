@@ -2,9 +2,9 @@
 title = "Site calibration: Image"
 date = 2026-01-19
 [taxonomies]
-tags = ["code", "zoda"]
+tags = ["code", "zola"]
 meta = ["visual"]
-ctx = ["theme", "first post"]
+threads = ["inkagu.co site"]
 +++
 
 Light and dark themes are now mostly done, one last thing is to see how to share images in such setup. This page is posted separately to see how zola handles assets inside the dedicated directory.
