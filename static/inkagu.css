@@ -1,0 +1,350 @@
+@font-face {
+    font-family: TitlesFont;
+    font-weight: bold;
+    src: url(quicksand.woff2);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: TextsFont;
+    font-weight: 400;
+    src: url(kameron.woff2);
+    font-display: swap;
+}
+
+:root {
+    --bg-color: #101;
+    --text-color: #fff;
+    --selection-color: rgba(255, 87, 51, 0.3);
+    --title-accent-color: #fff8ad;
+    --code-bg-color: #d7827e77;
+    --code-text-color: #fff;
+    --blockquote-bg-color: #232136;
+    --link-border-color: #fff;
+    --link-hover-bg-color: rgba(255, 248, 173,.3);
+    --bookmark-hover-bg-color: rgba(200,200,255,.3);
+    --blockquote-border-left-color: #ea9d34;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #feffef;
+        --text-color: 111;
+        --selection-color: rgba(255, 87, 51, 0.3);
+        --title-accent-color: #087baa;
+        --code-bg-color: #d7827e;
+        --code-text-color: #fff;
+        --blockquote-bg-color: #faf4ed;
+        --link-border-color: #d7827e;
+        --link-hover-bg-color: rgba(235, 248, 255,.5);
+        --bookmark-hover-bg-color: #d7827e55;
+        --blockquote-border-left-color: #ea9d34;
+    }
+}
+
+html {
+    font-family: "TextsFont", Arial, sans-serif;
+    background-color: var(--bg-color);
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Overwrite img fix from the inline css in the base html. */
+img {
+    width: 100%;
+    max-width: 1000px;
+}
+
+::selection {
+    background-color: var(--selection-color);
+    color: var(--text-color);
+}
+
+/************************** Links *************************/
+
+a {
+    font-family: "TitlesFont", Arial, sans-serif;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/************************** Navi *************************/
+
+#navi {
+    font-family: "TitlesFont", Arial, sans-serif;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 48em;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+#navi-main {
+    display: grid;
+    grid-template-columns: 4rem auto;
+    align-items: stretch;
+}
+
+#navi-loco {
+    anchor-name: --loco-anchor;
+}
+
+#navi-loco img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#navi-hi {
+    position: absolute;
+    width: 4em;
+    height: auto;
+}
+
+#navi-hi img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#navi-hi {
+    postion-anchor: --loco-anchor;
+    transform: translate(-0.3em, -1.5em);
+    animation-duration: 2s;
+    animation-name: fade-in-out;
+    opacity: 0;
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+#navi-first-row {
+    display: flex;
+    font-size: 32px;
+    justify-content: left;
+    align-items: center;
+}
+
+#navi-first-row ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#navi-first-row ul li {
+    display: grid;
+    padding-left: 1rem;
+}
+
+@media (min-width: 48em) {
+    #navi-first-row ul li {
+        display: inline;
+        padding-left: 2rem;
+    }
+}
+
+#navi-path {
+    margin-top: 0.5em;
+    font-size: 16px;
+}
+
+#navi-path a {
+    text-decoration: underline;
+}
+
+/************************** Content *************************/
+
+.content {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+@media (min-width: 48em) {
+    .content {
+        max-width: 48em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.content a[target="_blank"]::after {
+    content: "╯";
+    margin-left: 0.25em;
+    font-size: 0.8em;
+}
+
+.content > .posts > .post {
+    border-radius: 5px;
+    border: 1px solid var(--link-border-color);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "TitlesFont", Arial, sans-serif;
+}
+
+h1 {
+    font-size: 1.7em;
+}
+
+@media (min-width: 48em) {
+    h1 {
+        font-size: 2em;
+    }
+}
+
+/************************** Posts *************************/
+
+.post > h1, .post > h2,
+.post > h3, .post > h4, .post > h5 {
+    font-family: "TitlesFont", Arial, sans-serif;
+    color: var(--title-accent-color);
+}
+
+/* First level of points has no * infront. */
+#homepage-posts > ul,
+.bookmarks > ul {
+    padding: 0;
+    margin: 0;
+}
+
+#homepage-posts > ul > li,
+.bookmarks > ul > li {
+    list-style-type: none;
+}
+
+.post-date {
+    margin-bottom: 0;
+    font-family: "TitlesFont", Arial, sans-serif;
+    color: var(--text-color) !important;
+}
+
+.post-title {
+    margin-top: 0;
+    color: var(--title-accent-color);
+}
+
+.title-link, 
+.log-links a {
+    border: var(--link-border-color);
+}
+
+.title-link:hover,
+.log-links h1:hover {
+    background-color: var(--link-hover-bg-color);
+}
+
+.bookmarks a,
+.timeline-readmore a,
+.post a {
+    font-family: "TitlesFont", Arial, sans-serif;
+    color: var(--text-color);
+    text-decoration: none;
+    border: 1px solid var(--link-border-color);
+    border-radius: 0.4em;
+    padding: 0 0.3em;
+    font-size: 0.8em;
+}
+
+.bookmarks a:hover,
+.timeline-readmore a:hover,
+.post a:hover {
+    background-color: var(--bookmark-hover-bg-color);
+}
+
+.giallo {
+    display: block;
+    font-size: 0.9em;
+    padding: 20px;
+    border-radius: 1em;
+    overflow-x: auto;
+}
+
+p > code {
+    border-radius: 0.4em;
+    padding: 0 0.3em;
+    font-size: 0.8em;
+    color: var(--code-text-color);
+    background-color: var(--code-bg-color);
+}
+
+blockquote {
+    margin: 0;
+    padding-left: 1.5em;
+    border-left: 0.3em solid var(--blockquote-border-left-color);
+    background-color: var(--blockquote-bg-color);
+}
+
+.giallo-l {
+    display: inline-block;
+    min-height: 1lh;
+    width: 100%;
+}
+.giallo-ln {
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0.4em;
+    min-width: 3ch;
+    text-align: right;
+    opacity: 0.8;
+}
+
+/************************** Timeline *************************/
+
+.timeline-logs {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+@media (min-width: 48em) {
+    .timeline-logs {
+        max-width: 48em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.timeline-log {
+    padding: 1em;
+    border-radius: 1em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.3em;
+}
+
+.timeline-log > h4 {
+    padding: 0;
+    margin-top: 0 !important;
+}
+
+.timeline-log h1 {
+    margin-bottom: 0.2em;
+}
+
+.timeline-readmore {
+    text-align: left;
+}
+
+.timeline-readmore a {
+    padding: 0.5em;
+}

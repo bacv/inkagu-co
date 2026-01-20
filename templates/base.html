@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+
+      <style>
+        img {
+            max-width: 50px; /* make it small in case css fails to load */
+        }
+      </style>
+      <link rel="stylesheet" href="{{ get_url(path="inkagu.css", trailing_slash=false) }}">
+
+      {% if config.generate_feed %}
+        <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+      {% endif %}
+
+      {% block extra_head %}
+      {% endblock extra_head %}
+    </head>
+
+    <body>
+        {% include "navi.html"  %}
+        <div class="content container">
+            {% block content %} {% endblock content %}
+        </div>
+    </body>
+</html>

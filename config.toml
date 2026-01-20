@@ -1,0 +1,33 @@
+base_url = "https://inkagu.co"
+title = "inkaguco"
+description = "Gusto's personal website"
+
+default_language = "en"
+
+taxonomies = [
+    {name = "tags"}
+]
+
+# No need for search in the beginning.
+# build_search_index = true
+
+# [search]
+# include_title = true
+# include_description = true
+# include_path = true
+# include_content = true
+# index_format = "elasticlunr_json"
+
+[markdown]
+external_links_target_blank = true
+
+[markdown.highlighting]
+light_theme = "rose-pine-dawn"
+dark_theme = "rose-pine-moon"
+
+[extra]
+inkagu_links = [
+    {name = "info", url = "/pages/info"},
+    {name = "projects", url = "/pages/projects"},
+    {name = "", url = "/pages/photography"},
+]

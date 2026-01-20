@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    Hi, I’m Gusto. Welcome to my corner of the web. Here I share both digital and physical creations. Take a look around.
+</h1>
+<div id="homepage-posts">
+    {% set section = get_section(path="logs/_index.md") %}
+    <div class="timeline-logs">
+        {% for page in section.pages | slice(end=3) %}
+        <div class="timeline-log">
+           <h4 class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</h4>
+            <a href="{{ page.permalink | safe }}">
+               <h1 class="post-title">
+                   {{ page.title | safe }}
+               </h1>
+            </a>
+            <div class="post">
+              {{ page.summary | replace(from='src="', to='src="' ~ page.permalink) | safe }}
+            </div>
+            <div class="timeline-readmore">
+                <a href="{{ page.permalink }}">Read more</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

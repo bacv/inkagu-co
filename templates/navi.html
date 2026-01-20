@@ -1,0 +1,35 @@
+<div id="navi">
+    <div id="navi-main">
+        <div id="navi-loco">
+            <a href="/"><img src="/loco-rect2.svg" /></a>
+        </div>
+        <div id="navi-hi">
+            <a href="/"><img src="/loco-hi.svg" /></a>
+        </div>
+        <div id="navi-first-row">
+            <ul>
+                <li><a href="/timeline">Timeline</a></li>
+                <li><a href="/logs">Logs</a></li>
+                <li><a href="/bookmarks">Bookmarks</a></li>
+                <li><a href="/info">Info</a></li>
+            </ul>
+        </div>
+    </div>
+        {% if page.ancestors %}
+        <div id="navi-path">
+            <a href="{{ config.base_url }}">Home</a>
+            {% for ancestor in page.ancestors %}
+                {% set current_anc = get_section(path=ancestor) %}
+                {% if current_anc.path != "/" %}
+                    / <a href="{{ current_anc.permalink }}">{{ current_anc.title }}</a>
+                {% endif %}
+            {% endfor %}
+            / <span>{{ page.title }}</span>
+        </div>
+        {% elif section and section.path != "/" %}
+        <div id="navi-path">
+            <a href="{{ config.base_url }}">Home</a>
+            / <span>{{ section.title }}</span>
+        </div>
+        {% endif %}
+</div>
