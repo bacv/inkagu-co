@@ -6,10 +6,17 @@
     </div>
 
     <div class="tags-section">
-        {% if page.taxonomies.tags %}
-            {% for tag in page.taxonomies.tags %}
-            <span class="tag"><a href="/tags/{{ tag }}">{{ tag }}</a></span>
-            {% endfor %}
-        {% endif %}
+            {% if page.taxonomies.threads %}
+                {% set threads = get_taxonomy(kind="threads") %}
+                {% for thread in threads.items %}
+                <span class="tag"><a href="{{ thread.permalink }}">{{ thread.name }}</a></span>
+                {% endfor %}
+            {% endif %}
+            {% if page.taxonomies.tags %}
+                {% set tags = get_taxonomy(kind="tags") %}
+                {% for tag in tags.items %}
+                <span class="tag"><a href="{{ tag.permalink }}">{{ tag.name }}</a></span>
+                {% endfor %}
+            {% endif %}
     </div>
 </div>
