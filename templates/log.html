@@ -10,7 +10,7 @@
         <div class="tags-section">
             {% if page.taxonomies.tags %}
                 {% for tag in page.taxonomies.tags %}
-                    <span class="taxonomy-item tag">{{ tag }}</span>
+                <span class="tag"><a href="/tags/{{ tag }}">{{ tag }}</a></span>
                 {% endfor %}
             {% endif %}
         </div>

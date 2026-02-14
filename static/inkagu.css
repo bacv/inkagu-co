@@ -21,6 +21,7 @@
     --code-text-color: #fff;
     --blockquote-bg-color: #232136;
     --link-border-color: #fff;
+    --timeline-border-color: #544;
     --link-hover-bg-color: rgba(255, 248, 173,.3);
     --bookmark-hover-bg-color: rgba(200,200,255,.3);
     --blockquote-border-left-color: #ea9d34;
@@ -39,6 +40,7 @@
         --code-text-color: #fff;
         --blockquote-bg-color: #faf4ed;
         --link-border-color: #d7827e;
+        --timeline-border-color: #d7827e;
         --link-hover-bg-color: rgba(235, 248, 255,.5);
         --bookmark-hover-bg-color: #d7827e55;
         --blockquote-border-left-color: #ea9d34;
@@ -309,6 +311,7 @@ h5 {
     background-color: var(--link-hover-bg-color);
 }
 
+.thread-link,
 .bookmarks a,
 .timeline-readmore a,
 .info a,
@@ -322,6 +325,7 @@ h5 {
     font-size: 0.8em;
 }
 
+.thread-link:hover,
 .bookmarks a:hover,
 .timeline-readmore a:hover,
 .info a:hover,
@@ -385,7 +389,7 @@ blockquote {
 .timeline-log {
     padding: 1em;
     border-radius: 1em;
-    border: 1px solid var(--link-border-color);
+    border: 1px solid var(--timeline-border-color);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -400,6 +404,14 @@ blockquote {
 
 .timeline-log h1 {
     margin-bottom: 0.2em;
+}
+
+.timeline-log-older {
+    margin-left: 2em;
+}
+
+.timeline-log-older h3 {
+    margin: 0;
 }
 
 .timeline-readmore {

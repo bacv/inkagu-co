@@ -1,0 +1,8 @@
+{% block content %}
+    {% set section = get_section(path="logs/_index.md") %}
+    <div class="timeline-logs">
+        {% for page in section.pages %}
+            {% include "timeline/item.html" %}
+        {% endfor %}
+    </div>
+{% endblock content %}

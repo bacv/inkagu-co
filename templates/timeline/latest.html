@@ -1,0 +1,10 @@
+{% block content %}
+    {% set threads = get_taxonomy(kind="threads") %}
+    <div class="timeline-logs">
+        {% for thread in threads.items %}
+        <p>Latest from <a class="thread-link" href="{{ thread.permalink }}">{{ thread.name }}</a>:</p>
+            {% set page = thread.pages | first %}
+            {% include "timeline/item.html" %}
+        {% endfor %}
+    </div>
+{% endblock content %}
