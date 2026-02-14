@@ -11,7 +11,7 @@
             {% if page.taxonomies.threads %}
                 {% set threads = get_taxonomy(kind="threads") %}
                 {% for thread in threads.items %}
-                <span class="tag"><a href="{{ thread.permalink }}">{{ thread.name }}</a></span>
+                <span class="tag tag-thread"><a href="{{ thread.permalink }}">{{ thread.name }}</a></span>
                 {% endfor %}
             {% endif %}
             {% if page.taxonomies.tags %}

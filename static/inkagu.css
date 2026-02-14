@@ -26,6 +26,7 @@
     --bookmark-hover-bg-color: rgba(200,200,255,.3);
     --blockquote-border-left-color: #ea9d34;
     --tag-bg-color: #d5ff4061;
+    --tag-thread-bg-color: #55fff561;
     --tag-text-color: #fff;
     --site-desktop-width: 32em;
 }
@@ -40,11 +41,12 @@
         --code-text-color: #fff;
         --blockquote-bg-color: #faf4ed;
         --link-border-color: #d7827e;
-        --timeline-border-color: #d7827e;
+        --timeline-border-color: #d7827e43;
         --link-hover-bg-color: rgba(235, 248, 255,.5);
         --bookmark-hover-bg-color: #d7827e55;
         --blockquote-border-left-color: #ea9d34;
         --tag-bg-color: #44ff4433;
+        --tag-thread-bg-color: #35fff361;
         --tag-text-color: #000;
         --site-desktop-width: 32em;
     }
@@ -415,6 +417,7 @@ blockquote {
 }
 
 .timeline-readmore {
+    min-width: 6em;
     text-align: left;
 }
 
@@ -445,3 +448,6 @@ blockquote {
     border-radius: 1em;
 }
 
+.tag-thread {
+    background: var(--tag-thread-bg-color);
+}

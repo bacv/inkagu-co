@@ -1,21 +1,21 @@
 <div class="timeline-footer">
+    {% if page.summary %}
     <div class="timeline-readmore">
-        {% if page.summary %}
             <a href="{{ page.permalink }}">Read more</a>
-        {% endif %}
     </div>
+    {% endif %}
 
     <div class="tags-section">
             {% if page.taxonomies.threads %}
-                {% set threads = get_taxonomy(kind="threads") %}
-                {% for thread in threads.items %}
-                <span class="tag"><a href="{{ thread.permalink }}">{{ thread.name }}</a></span>
+                {% for thread in page.taxonomies.threads %}
+                    {% set thread = get_taxonomy_term(kind="threads", term=thread) %}
+                    <span class="tag tag-thread"><a href="{{ thread.permalink }}">{{ thread.name }}</a></span>
                 {% endfor %}
             {% endif %}
             {% if page.taxonomies.tags %}
-                {% set tags = get_taxonomy(kind="tags") %}
-                {% for tag in tags.items %}
-                <span class="tag"><a href="{{ tag.permalink }}">{{ tag.name }}</a></span>
+                {% for tag in page.taxonomies.tags %}
+                    {% set tag = get_taxonomy_term(kind="tags", term=tag) %}
+                    <span class="tag"><a href="{{ tag.permalink }}">{{ tag.name }}</a></span>
                 {% endfor %}
             {% endif %}
     </div>
