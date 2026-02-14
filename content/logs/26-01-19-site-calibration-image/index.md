@@ -2,7 +2,7 @@
 title = "Site calibration: Image"
 date = 2026-01-19
 [taxonomies]
-tags = ["code", "zola"]
+tags = ["code", "zola", "meme"]
 meta = ["visual"]
 threads = ["inkagu.co site"]
 +++
